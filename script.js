@@ -19,7 +19,7 @@
  */
 
 const EMAILJS = {
-    publicKey:  'gLobeggIF-o_wpHtM',
+    publicKey:  'er3ZdPmIq0wQaaRb_',
     serviceId:  'service_dba105v',
     templateId: 'template_1xc4h8r',
 };
