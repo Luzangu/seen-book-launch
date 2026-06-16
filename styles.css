@@ -898,11 +898,11 @@
             .countdown-item { padding: 0.8rem 1rem; }
             .countdown-number { font-size: 2.4rem; }
 
-            /* SCENE acronym — keep on one line, hide sub-labels (too small to read) */
-            .hero-acronym { flex-wrap: nowrap; gap: 0.6rem; }
-            .acronym-full { display: none; }
-            .acronym-letter { font-size: 1.3rem; }
-            .acronym-sep { font-size: 1.5rem; margin-top: 0; }
+            /* SCENE acronym — keep on one line with words visible */
+            .hero-acronym { flex-wrap: nowrap; gap: 0.2rem; }
+            .acronym-full { font-size: 0.5rem; letter-spacing: 0; }
+            .acronym-letter { font-size: 1rem; }
+            .acronym-sep { font-size: 1.2rem; margin-top: 0; }
 
             .book-cover { width: 220px; height: 310px; }
             .footer-bottom { justify-content: center; text-align: center; }
