@@ -19,9 +19,9 @@
  */
 
 const EMAILJS = {
-    publicKey:  'YOUR_PUBLIC_KEY',    // ← replace this
-    serviceId:  'YOUR_SERVICE_ID',    // ← replace this
-    templateId: 'YOUR_TEMPLATE_ID',   // ← replace this
+    publicKey:  'gLobeggIF-o_wpHtM',
+    serviceId:  'service_dba105v',
+    templateId: 'template_1xc4h8r',
 };
 
 emailjs.init(EMAILJS.publicKey);
