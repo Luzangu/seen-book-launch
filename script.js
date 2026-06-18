@@ -19,9 +19,10 @@
  */
 
 const EMAILJS = {
-    publicKey:  'er3ZdPmIq0wQaaRb_',
-    serviceId:  'service_dba105v',
-    templateId: 'template_1xc4h8r',
+    publicKey:   'er3ZdPmIq0wQaaRb_',
+    serviceId:   'service_dba105v',
+    templateId:  'template_1xc4h8r',
+    autoReplyId: 'template_9oxrdvm',
 };
 
 emailjs.init(EMAILJS.publicKey);
@@ -114,7 +115,10 @@ form.addEventListener('submit', async (e) => {
     };
 
     try {
-        await emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, data);
+        await Promise.all([
+            emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, data),
+            emailjs.send(EMAILJS.serviceId, EMAILJS.autoReplyId, data),
+        ]);
 
         // Show success
         document.getElementById('confirmedEmail').textContent = data.email;
