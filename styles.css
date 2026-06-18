@@ -542,6 +542,39 @@
             color: var(--text-light);
         }
 
+        /* PRICING ROW */
+        .pricing-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            border: 1px solid var(--beige-dark);
+            background: var(--cream);
+        }
+        .pricing-item {
+            flex: 1;
+            text-align: center;
+            padding: 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .pricing-sep {
+            width: 1px;
+            background: var(--beige-dark);
+        }
+        .pricing-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+        .pricing-amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--brown-deep);
+        }
+
         /* ORDER FORM */
         .order-section {
             padding: 8rem 5%;
