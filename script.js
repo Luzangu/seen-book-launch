@@ -41,7 +41,7 @@ window.addEventListener('scroll', () => {
    🗓️  Update this date once the launch date is confirmed:
        new Date(YEAR, MONTH_INDEX, DAY)  ← month is 0-indexed (July = 6)
  */
-const LAUNCH_DATE = new Date(2026, 6, 31, 10, 0, 0); // July 31 2026, 10:00am
+const LAUNCH_DATE = new Date(2026, 6, 11, 11, 0, 0); // July 11 2026, 11:00am
 
 function pad(n) { return String(n).padStart(2, '0'); }
 
