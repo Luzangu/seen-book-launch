@@ -66,7 +66,7 @@ const deliverySelect = document.getElementById('delivery');
 const addressGroup   = document.getElementById('addressGroup');
 const addressInput   = document.getElementById('address');
 
-deliverySelect.addEventListener('change', () => {
+if (deliverySelect) deliverySelect.addEventListener('change', () => {
     const isPickup = deliverySelect.value === 'Pickup at Event';
     addressGroup.style.display = isPickup ? 'none' : 'block';
     addressInput.required      = !isPickup;
@@ -80,7 +80,7 @@ const submitBtn  = document.getElementById('submitBtn');
 const successMsg = document.getElementById('successMsg');
 const errorMsg   = document.getElementById('errorMsg');
 
-form.addEventListener('submit', async (e) => {
+if (form) form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Basic client-side validation
