@@ -61,19 +61,6 @@ tick();
 setInterval(tick, 1000);
 
 
-/* DELIVERY ADDRESS TOGGLE */
-const deliverySelect = document.getElementById('delivery');
-const addressGroup   = document.getElementById('addressGroup');
-const addressInput   = document.getElementById('address');
-
-if (deliverySelect) deliverySelect.addEventListener('change', () => {
-    const isPickup = deliverySelect.value === 'Pickup at Event';
-    addressGroup.style.display = isPickup ? 'none' : 'block';
-    addressInput.required      = !isPickup;
-    if (isPickup) addressInput.value = '';
-});
-
-
 /*  FORM SUBMISSION */
 const form       = document.getElementById('orderForm');
 const submitBtn  = document.getElementById('submitBtn');
@@ -84,8 +71,7 @@ if (form) form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Basic client-side validation
-    const required = ['fullName','phone','email'];
-    if (deliverySelect.value === 'Home Delivery') required.push('address');
+    const required = ['fullName', 'phone', 'email', 'address'];
     let valid = true;
     required.forEach(id => {
         const el = document.getElementById(id);
@@ -104,8 +90,8 @@ if (form) form.addEventListener('submit', async (e) => {
         phone:     document.getElementById('phone').value.trim(),
         email:     document.getElementById('email').value.trim(),
         copies:    document.getElementById('copies').value,
-        delivery:  deliverySelect.value,
-        address:   addressInput.value.trim() || 'Pickup at launch event',
+        delivery:  'Home Delivery',
+        address:   document.getElementById('address').value.trim(),
         note:      document.getElementById('note').value.trim() || 'No message',
         timestamp: new Date().toLocaleString('en-GB', {
             timeZone: 'Africa/Lusaka',
@@ -124,8 +110,6 @@ if (form) form.addEventListener('submit', async (e) => {
         document.getElementById('confirmedEmail').textContent = data.email;
         successMsg.style.display = 'block';
         form.reset();
-        addressGroup.style.display = 'block';
-        addressInput.required      = true;
         successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
     } catch (err) {

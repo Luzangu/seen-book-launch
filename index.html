@@ -193,20 +193,64 @@
 
         <div class="pricing-row reveal">
             <div class="pricing-item">
-                <span class="pricing-label">Launch Event Ticket</span>
-                <span class="pricing-amount">K400</span>
-            </div>
-            <div class="pricing-sep"></div>
-            <div class="pricing-item">
                 <span class="pricing-label">Book — <em>SEEN</em></span>
                 <span class="pricing-amount">K300</span>
             </div>
+            <div class="pricing-sep"></div>
+            <div class="pricing-item">
+                <span class="pricing-label">Home Delivery</span>
+                <span class="pricing-amount">Included</span>
+            </div>
         </div>
 
-        <div class="form-card reveal" style="text-align:center;padding:3rem 2rem;">
-            <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;">Pre-Orders Are Now Closed</h3>
-            <p style="color:#555;max-width:480px;margin:0 auto 1.5rem;">Thank you to everyone who secured a copy of <em>SEEN</em>. We're overwhelmed by the support!</p>
-            <p style="color:#555;max-width:480px;margin:0 auto;">For any enquiries, reach out directly at <a href="mailto:kellykantumoya18@gmail.com" style="color:inherit;font-weight:600;">kellykantumoya18@gmail.com</a></p>
+        <div class="form-card reveal">
+            <div class="form-note">
+                <strong>Home Delivery Only.</strong> Reserve your copy below and we'll confirm your order and delivery details within 24 hours. No payment required now.
+            </div>
+            <form id="orderForm">
+                <div class="form-two-col">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+260 ...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="copies">Number of Copies</label>
+                    <select id="copies">
+                        <option value="1">1 copy — K300</option>
+                        <option value="2">2 copies — K600</option>
+                        <option value="3">3 copies — K900</option>
+                        <option value="4">4 copies — K1,200</option>
+                        <option value="5+">5+ copies</option>
+                    </select>
+                </div>
+                <div class="form-group" id="addressGroup">
+                    <label for="address">Delivery Address</label>
+                    <input type="text" id="address" placeholder="Street, area, city" required>
+                </div>
+                <div class="form-group">
+                    <label for="note">Note <span style="font-weight:400;opacity:0.6">(optional)</span></label>
+                    <textarea id="note" rows="3" placeholder="Any special requests or instructions..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Reserve My Copy
+                    <span class="btn-spinner"></span>
+                </button>
+            </form>
+            <div id="successMsg" class="form-message success">
+                Reservation confirmed! A confirmation email has been sent to <strong id="confirmedEmail"></strong>. We'll be in touch with your delivery details shortly.
+            </div>
+            <div id="errorMsg" class="form-message error">
+                Something went wrong. Please try again or email us at <strong>kellykantumoya18@gmail.com</strong>.
+            </div>
         </div>
     </div>
 </section>
